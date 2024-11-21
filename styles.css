@@ -1,3 +1,4 @@
+/* Common styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -11,6 +12,16 @@ h1 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 20px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2980b9;
 }
 
 /* Login form styles */
@@ -47,10 +58,15 @@ button:hover {
     background-color: #34495e;
 }
 
+#wrongPassword {
+    color: #e74c3c;
+    display: none;
+    margin-top: 10px;
+}
+
 /* Table styles */
 #content {
     display: none;
-    /* Hidden by default */
 }
 
 table {
@@ -82,25 +98,6 @@ tr:hover {
     background-color: #f8f9fa;
 }
 
-.capo {
-    color: #e74c3c;
-    font-weight: bold;
-}
-
-.no-capo {
-    color: #27ae60;
-}
-
-a {
-    color: #3498db;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #2980b9;
-}
-
 .sort-arrow {
     display: inline-block;
     width: 0;
@@ -121,8 +118,100 @@ a:hover {
     border-top: 4px solid white;
 }
 
-#wrongPassword {
-    color: #e74c3c;
-    display: none;
-    margin-top: 10px;
+/* Song page styles */
+/* Song page specific styles */
+.song-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.header {
+    grid-column: 1 / -1; /* spans both columns */
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.artist {
+    color: #666;
+    margin: 3px 0;
+    font-size: 0.9em;
+}
+
+.capo-info {
+    color: #333;
+    font-weight: bold;
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.section {
+    background: white;
+    padding: 15px;
+    margin: 0 0 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: #7f8c8d;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+}
+
+.lyrics-line {
+    margin: 12px 0;
+    position: relative;
+    padding-top: 16px;
+}
+
+.chords {
+    color: #2980b9;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 0.9em;
+    position: absolute;
+    top: 0;
+}
+
+.lyrics {
+    color: #333;
+    font-size: 0.9em;
+}
+
+.back-link {
+    grid-column: 1 / -1;
+}
+
+/* iPad-specific adjustments */
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 10px;
+        max-width: 100%;
+    }
+    
+    .header {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+}
+
+/* Switch to single column on smaller screens */
+@media screen and (max-width: 768px) {
+    .song-container {
+        grid-template-columns: 1fr;
+    }
 }
