@@ -5,212 +5,251 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lib songs</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        th {
-            background-color: #2c3e50;
-            color: white;
-            padding: 12px 15px;
-            text-align: left;
-        }
-
-        td {
-            padding: 10px 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        tr:hover {
-            background-color: #f8f9fa;
-        }
-
-        .capo {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        .no-capo {
-            color: #27ae60;
-        }
-
-        .stats {
-            text-align: right;
-            margin-top: 10px;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: #2980b9;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 
 <body>
-    <h1>Lib songs</h1>
+    <!-- Login Form -->
+    <div id="loginForm">
+        <h1>Lib Songs</h1>
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button onclick="checkPassword()">Enter</button>
+        <p id="wrongPassword">Incorrect password. Please try again.</p>
+    </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Song</th>
-                <th>Artist</th>
-                <th>Capo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="songs/addicted-to-you.html">Addicted To You</a></td>
-                <td>Avicii</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/all-i-want.html">All I Want</a></td>
-                <td>Kodaline</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/all-in-my-mind.html">All in My Mind</a></td>
-                <td>Isaac Gracie</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/comforting-sounds.html">Comforting Sounds</a></td>
-                <td>Mew</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/creep.html">Creep</a></td>
-                <td>Radiohead</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/end-of-the-world.html">End of the World, The</a></td>
-                <td>Skeeter Davis</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/fake-plastic-trees.html">Fake Plastic Trees</a></td>
-                <td>Radiohead</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/high-hopes.html">High Hopes</a></td>
-                <td>Kodaline</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/hollow-crown.html">Hollow Crown</a></td>
-                <td>Isaac Gracie</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/house-of-the-rising-sun.html">House of the Rising Sun</a></td>
-                <td>The Animals</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/jeds-other-poem.html">Jed's Other Poem (Beautiful Ground)</a></td>
-                <td>Grandaddy</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/lucky.html">Lucky</a></td>
-                <td>Radiohead</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/map-of-the-problematique.html">Map of the Problematique</a></td>
-                <td>Muse</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/only-you.html">Only You (And You Alone)</a></td>
-                <td>The Platters</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/please.html">Please, Please, Please, Let Me Get What I Want</a></td>
-                <td>The Smiths</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/restless-heart-syndrome.html">Restless Heart Syndrome</a></td>
-                <td>Green Day</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/rocket-to-the-moon.html">Rocket to the Moon, A</a></td>
-                <td>GAVIN:D</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/sense.html">Sense</a></td>
-                <td>Tom Odell</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/silhouettes-of-you.html">Silhouettes of You</a></td>
-                <td>Isaac Gracie</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/since-i-have-you-near-me.html">Since I Have You Near Me</a></td>
-                <td>Corentin Soulier</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/stop-and-stare.html">Stop and Stare</a></td>
-                <td>OneRepublic</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/terrified.html">Terrified</a></td>
-                <td>Isaac Gracie</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/tonight-wont-be-noisy.html">Tonight Won't Be Noisy</a></td>
-                <td>Corentin Soulier</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/unintended.html">Unintended</a></td>
-                <td>Muse</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-            <tr>
-                <td><a href="songs/wicked-game.html">Wicked Game</a></td>
-                <td>Chris Isaak</td>
-                <td class="no-capo">No capo</td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="content">
+        <h1>My Guitar Tabs Collection</h1>
+
+        <table id="songsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Song <span class="sort-arrow"></span></th>
+                    <th onclick="sortTable(1)">Artist <span class="sort-arrow"></span></th>
+                    <th onclick="sortTable(2)">Capo <span class="sort-arrow"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="songs/addicted-to-you.html">Addicted To You</a></td>
+                    <td>Avicii</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/all-i-want.html">All I Want</a></td>
+                    <td>Kodaline</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/all-in-my-mind.html">All in My Mind</a></td>
+                    <td>Isaac Gracie</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/comforting-sounds.html">Comforting Sounds</a></td>
+                    <td>Mew</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/creep.html">Creep</a></td>
+                    <td>Radiohead</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/end-of-the-world.html">The End of the World</a></td>
+                    <td>Skeeter Davis</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/fake-plastic-trees.html">Fake Plastic Trees</a></td>
+                    <td>Radiohead</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/high-hopes.html">High Hopes</a></td>
+                    <td>Kodaline</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/hollow-crown.html">Hollow Crown</a></td>
+                    <td>Isaac Gracie</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/house-of-the-rising-sun.html">House of the Rising Sun</a></td>
+                    <td>The Animals</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/jeds-other-poem.html">Jed's Other Poem (Beautiful Ground)</a></td>
+                    <td>Grandaddy</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/lucky.html">Lucky</a></td>
+                    <td>Radiohead</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/map-of-the-problematique.html">Map of the Problematique</a></td>
+                    <td>Muse</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/only-you.html">Only You (And You Alone)</a></td>
+                    <td>The Platters</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/please.html">Please, Please, Please, Let Me Get What I Want</a></td>
+                    <td>The Smiths</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/restless-heart-syndrome.html">Restless Heart Syndrome</a></td>
+                    <td>Green Day</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/rocket-to-the-moon.html">A Rocket to the Moon</a></td>
+                    <td>GAVIN:D</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/sense.html">Sense</a></td>
+                    <td>Tom Odell</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/silhouettes-of-you.html">Silhouettes of You</a></td>
+                    <td>Isaac Gracie</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/since-i-have-you-near-me.html">Since I Have You Near Me</a></td>
+                    <td>Corentin Soulier</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/stop-and-stare.html">Stop and Stare</a></td>
+                    <td>OneRepublic</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/terrified.html">Terrified</a></td>
+                    <td>Isaac Gracie</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/tonight-wont-be-noisy.html">Tonight Won't Be Noisy</a></td>
+                    <td>Corentin Soulier</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/unintended.html">Unintended</a></td>
+                    <td>Muse</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+                <tr>
+                    <td><a href="songs/wicked-game.html">Wicked Game</a></td>
+                    <td>Chris Isaak</td>
+                    <td class="no-capo">No capo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // The hashed password below is for "your-password-here"
+        // You should replace this with your own hashed password
+        const hashedCorrectPassword = "bf8cc2f8a6332c6f8a354a5b70cc8186c59cd350c857188a4b46f7048c1b0cd0";
+
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return hashHex;
+        }
+
+        async function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const loginForm = document.getElementById('loginForm');
+            const content = document.getElementById('content');
+            const wrongPassword = document.getElementById('wrongPassword');
+
+            const hashedInput = await hashPassword(password);
+
+            if (hashedInput === hashedCorrectPassword) {
+                loginForm.style.display = 'none';
+                content.style.display = 'block';
+                sessionStorage.setItem('authenticated', 'true');
+            } else {
+                wrongPassword.style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('passwordInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // Check if already authenticated
+        window.onload = function () {
+            if (sessionStorage.getItem('authenticated') === 'true') {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }
+        }
+
+        // Sorting functionality remains the same
+        let currentSort = {
+            column: -1,
+            asc: true
+        };
+
+        function sortTable(column) {
+            const table = document.getElementById('songsTable');
+            const tbody = table.getElementsByTagName('tbody')[0];
+            const rows = Array.from(tbody.getElementsByTagName('tr'));
+            const arrows = document.getElementsByClassName('sort-arrow');
+
+            Array.from(arrows).forEach(arrow => {
+                arrow.className = 'sort-arrow';
+            });
+
+            if (currentSort.column === column) {
+                currentSort.asc = !currentSort.asc;
+            } else {
+                currentSort.asc = true;
+            }
+            currentSort.column = column;
+
+            arrows[column].className = 'sort-arrow ' + (currentSort.asc ? 'asc' : 'desc');
+
+            rows.sort((a, b) => {
+                let aValue = a.cells[column].textContent;
+                let bValue = b.cells[column].textContent;
+
+                if (column === 0) {
+                    aValue = a.cells[column].getElementsByTagName('a')[0].textContent;
+                    bValue = b.cells[column].getElementsByTagName('a')[0].textContent;
+                }
+
+                if (currentSort.asc) {
+                    return aValue.localeCompare(bValue);
+                } else {
+                    return bValue.localeCompare(aValue);
+                }
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+    </script>
 </body>
 
 </html>
